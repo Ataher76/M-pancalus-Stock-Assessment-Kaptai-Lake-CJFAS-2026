@@ -1,7 +1,7 @@
 # Multi-Model Stock Assessment of Macrognathus pancalus in Kaptai Lake
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/1226833832.svg)](https://doi.org/10.5281/zenodo.19962119)
 
 ## **Project Overview**
 This repository contains the primary length-frequency datasets and R code supporting the manuscript:  
@@ -15,12 +15,12 @@ The study utilizes three distinct length-based models—**TropFishR**, **LBB**, 
 All data and scripts are made publicly available to ensure reproducibility and transparency in accordance with the *Canadian Journal of Fisheries and Aquatic Sciences* data policy.
 
 ### **Repository Contents**
-*   `/Data`: Monthly length-frequency data for *M. pancalus* collected from Kaptai Lake.
-*   `/Scripts`: R scripts for:
+*   **`/Data`**: Monthly length-frequency data for *M. pancalus* collected from Kaptai Lake.
+*   **`/Scripts`**: R scripts for:
     *   **TropFishR**: Estimation of growth and mortality parameters.
     *   **LBB (Length-Based Bayesian)**: Biomass and stock status estimation.
     *   **LBSPR**: Spawning Potential Ratio and selectivity analysis.
-*   `/Results`: Output summaries and sensitivity analysis figures.
+*   **`/Results`**: Output summaries and sensitivity analysis figures.
 
 ---
 
@@ -33,6 +33,6 @@ If you utilize the data or code in this repository, please cite the manuscript:
 
 ## **Contact**
 **Ataher Ali**  
-University of Chittagong, Bangladesh  
+University of Chittagong, Bangladesh
 *   **Email:** ataher.cu.ms@gmail.com
-*   **ORCID:** https://orcid.org/0009-0008-8780-0903
+*   **ORCID:** [https://orcid.org/0009-0008-8780-0903](https://orcid.org/0009-0008-8780-0903)
