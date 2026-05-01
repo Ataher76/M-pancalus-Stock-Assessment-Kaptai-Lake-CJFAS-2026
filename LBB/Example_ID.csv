@@ -1,0 +1,2 @@
+File,Species,Stock,StartYear,EndYear,Years.user,Year.select,Gears.user,Lcut.user,Lc.user,Lstart.user,Linf.user,MK.user,mm.user,GausSel,MergeLF,Pile,Lm50,Comment,Source
+Example_Dat.csv,P. cinereus,P. cinereus,NA,NA,NA,NA,NA,NA,10.77,NA,19.19,1.58,FALSE,FALSE,FALSE,0,11.5,,

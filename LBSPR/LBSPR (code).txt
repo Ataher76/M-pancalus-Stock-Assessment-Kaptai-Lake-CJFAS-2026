@@ -1,0 +1,67 @@
+library(readr)
+LBSPR <- read_csv("LBSPR.csv")
+View(LBSPR)
+
+install.packages("LBSPR")
+
+library(LBSPR)
+
+MyLengths <- new("LB_lengths")
+MyLengths
+
+DataDir()
+
+datdir <- setwd("D:/Thesis Analysis/LBSPR")
+datdir
+
+list.files(datdir, pattern=".csv")
+
+MyPars <- new("LB_pars")
+
+MyPars@Species <- "M pancalus"
+MyPars@Linf <-19.19
+MyPars@L50 <- 11.85
+MyPars@L95 <- 13.04
+MyPars@MK <- 1.58
+MyPars@L_units <- "cm"
+Len1 <- new("LB_lengths", LB_pars=MyPars, file=paste0(datdir, "/LBSPR.csv"), dataType="freq")
+
+plotSize(Len1)
+myFit1 <- LBSPRfit(MyPars, Len1)
+myFit1@L50
+myFit1@Ests
+
+data.frame(rawSL50=myFit1@SL50, rawSL95=myFit1@SL95, rawFM=myFit1@FM, rawSPR=myFit1@SPR)
+
+plotSize(myFit1)
+plotMat(myFit1)
+plotEsts(myFit1)
+
+MyPars <- new("LB_pars", verbose=FALSE)
+MyPars@Linf <-19.19
+MyPars@L50 <- 11.85
+MyPars@L95 <- 13.04
+MyPars@MK <- 1.58
+MyPars@L_units <- "cm"
+MyPars@SPR <- 0.4 # Target SPR 
+MyPars@BinWidth <- 1
+
+yr <- 1 # first year of data
+
+LenDat <- new("LB_lengths", LB_pars=MyPars, file=paste0(datdir, "/LBSPR.csv"), 
+              dataType="freq", verbose=FALSE)
+Mod <- LBSPRfit(MyPars, LenDat, verbose=FALSE)
+yr <- 1 # first year of data
+MyPars@SL50 <- Mod@SL50[yr]
+MyPars@SL95 <- Mod@SL95[yr]  
+LenDat
+MyPars
+plotTarg(MyPars, LenDat, yr=yr)
+plotTarg(MyPars,
+         LenDat, yr=yr,
+  Cols = c("red", "#1849db")
+)
+
+
+
+
