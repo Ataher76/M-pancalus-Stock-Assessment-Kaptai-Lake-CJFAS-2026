@@ -1,0 +1,28 @@
+data<-read_xlsx("lwr.xlsx")
+data
+df <- data.frame(data$`length data`, data$`weight data`)
+df$logL <- log10(df$data..length.data.)
+df$logW <- log10(df$data..weight.data.)
+model <- lm(logW ~ logL, data = df)
+summary(model)
+a <- 10^(coef(model)[1])
+a
+b <- coef(model)[2]
+b
+r2 <- summary(model)$r.squared
+pval <- summary(model)$coefficients[2,4]
+pval
+plot(df$logL, df$logW,
+     pch = 19,
+     col = "black",
+     xlab = "log(Length)",
+     ylab = "log(Weight)",
+     cex = 1.1)
+abline(model, col = "red", lwd = 3)
+text(x = min(df$logL),
+     y = max(df$logW),
+     labels = paste0(
+       "W = ", round(a,4), " L^", round(b,2), "\n",
+       "R² = ", round(r2,2), "\n"
+     ),
+     adj = c(0,1))
